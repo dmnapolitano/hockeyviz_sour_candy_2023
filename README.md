@@ -15,3 +15,5 @@ Since the 2003-2004 season didn't happen, point totals from the 2002-2003 season
 ## Every Team Except Seattle
 
 ## Seattle
+
+## Ranking
