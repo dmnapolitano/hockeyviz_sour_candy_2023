@@ -7,13 +7,13 @@ from ranking import predict_2024_ranking
 
 
 def fit_predict(team_df, rank_2024):
-    (train_df, test_df) = preprocess(team_df, True)
+    (train_df, test_df) = _preprocess(team_df, True)
     eval_df = _go(train_df, test_df)
     print()
     print(eval_df)
     print()
 
-    (train_df, future_df) = preprocess(team_df, False, rank_2024=rank_2024)
+    (train_df, future_df) = _preprocess(team_df, False, rank_2024=rank_2024)
     forecast_df = _go(train_df, future_df)
     print()
     print(forecast_df)
@@ -36,7 +36,7 @@ def _go(train_df, test_df):
     return pred_df
 
 
-def preprocess(team_df, model_training, rank_2024=None):
+def _preprocess(team_df, model_training, rank_2024=None):
     team_df = team_df[["season_end", "total_points", "points_rank"]].copy()
     team_df["ds"] = team_df["season_end"].apply(lambda x : date(month=5, day=1, year=x))
     team_df = team_df.rename(columns={"total_points" : "y"})
