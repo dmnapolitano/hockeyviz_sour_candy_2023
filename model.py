@@ -9,15 +9,11 @@ from ranking import predict_2024_ranking
 def fit_predict(team_df, rank_2024):
     (train_df, test_df) = _preprocess(team_df, True)
     eval_df = _go(train_df, test_df)
-    print()
-    print(eval_df)
-    print()
 
     (train_df, future_df) = _preprocess(team_df, False, rank_2024=rank_2024)
     forecast_df = _go(train_df, future_df)
-    print()
-    print(forecast_df)
-    print()
+
+    return (eval_df, forecast_df)
 
 
 def _go(train_df, test_df):
@@ -64,11 +60,3 @@ def _preprocess(team_df, model_training, rank_2024=None):
     forecast_df["ds"] = forecast_df["ds"].apply(lambda x : date(year=x.year + 1, month=x.month, day=x.day))
     forecast_df["ds"] = pandas.to_datetime(forecast_df["ds"])
     return (team_df, forecast_df)
-
-
-if __name__ == "__main__":
-    df = pandas.read_csv("NHL_API_point_totals_by_team_season_raw_1996-2003.csv")
-    ranks_2024 = predict_2024_ranking()
-    
-    team = "NJD"
-    fit_predict(df[df["team"] == team], ranks_2024[team])
