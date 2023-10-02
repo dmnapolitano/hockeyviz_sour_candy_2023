@@ -3,19 +3,21 @@ from datetime import date
 import pandas
 from prophet import Prophet
 
+from ranking import predict_2024_ranking
 
-def fit_predict(team_df):
+
+def fit_predict(team_df, rank_2024):
     (train_df, test_df) = preprocess(team_df, True)
     eval_df = _go(train_df, test_df)
     print()
     print(eval_df)
     print()
 
-    # (train_df, future_df) = preprocess(team_df, False)
-    # forecast_df = _go(train_df, future_df)
-    # print()
-    # print(forecast_df)
-    # print()
+    (train_df, future_df) = preprocess(team_df, False, rank_2024=rank_2024)
+    forecast_df = _go(train_df, future_df)
+    print()
+    print(forecast_df)
+    print()
 
 
 def _go(train_df, test_df):
@@ -34,7 +36,7 @@ def _go(train_df, test_df):
     return pred_df
 
 
-def preprocess(team_df, model_training):
+def preprocess(team_df, model_training, rank_2024=None):
     team_df = team_df[["season_end", "total_points", "points_rank"]].copy()
     team_df["ds"] = team_df["season_end"].apply(lambda x : date(month=5, day=1, year=x))
     team_df = team_df.rename(columns={"total_points" : "y"})
@@ -57,7 +59,8 @@ def preprocess(team_df, model_training):
     forecast_df = pandas.DataFrame([{"ds" : team_df.iloc[-1]["ds"],
                                      "lag1" : team_df.iloc[-1]["y"],
                                      "lag2" : team_df.iloc[-1]["lag1"],
-                                     "lag3" : team_df.iloc[-1]["lag2"]}])
+                                     "lag3" : team_df.iloc[-1]["lag2"],
+                                     "points_rank" : rank_2024}])
     forecast_df["ds"] = forecast_df["ds"].apply(lambda x : date(year=x.year + 1, month=x.month, day=x.day))
     forecast_df["ds"] = pandas.to_datetime(forecast_df["ds"])
     return (team_df, forecast_df)
@@ -65,4 +68,7 @@ def preprocess(team_df, model_training):
 
 if __name__ == "__main__":
     df = pandas.read_csv("NHL_API_point_totals_by_team_season_raw_1996-2003.csv")
-    fit_predict(df[df["team"] == "BOS"])
+    ranks_2024 = predict_2024_ranking()
+    
+    team = "NJD"
+    fit_predict(df[df["team"] == team], ranks_2024[team])
