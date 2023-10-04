@@ -12,8 +12,10 @@ If a team relocated since the start of this data, the data for that team in its 
 
 Since the 2003-2004 season didn't happen, point totals from the 2002-2003 season are copied over and treated as 2003-2004's point totals so as to not disrupt the time series.  (Another option could be to take the mean of 2001-2002 and 2002-2003, or even fit an autoregression on all data prior to 2003-2004...hmmm...)
 
-## Every Team Except Seattle
+## Every Team Except Seattle and Vegas
 
 ## Seattle
+
+## Vegas
 
 ## Ranking
