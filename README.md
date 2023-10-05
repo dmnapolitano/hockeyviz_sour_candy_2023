@@ -38,6 +38,8 @@ So far, VGK has only played six seasons, not enough for Prophet to be able to pr
 
 ## Limitations
 
-The predicted uncertainty is pretty big for each team, in the nature of 20+ points.  This demonstrates a lot of uncertainty in the predictions, despite our confidence in each model's performance (which is based on the point totals).  And this makes sense: there's a lot more to predicting a team's regular-season performance than just their past point totals.  Maybe except for Calgary.
+For most teams, the predicted uncertainty is pretty big, in the nature of 20+ points.  This demonstrates a lot of, well, uncertainty in the predictions, despite our confidence in each model's performance (which is based on the point totals).  And this makes sense: there's a lot more to predicting a team's regular-season performance than just their past point totals.  Except maybe for Calgary.
 
-But anyway, this was my first time really sitting down and working on this, this being a problem people devote their entire lives to and I think I can just walk in here... :zany:  Well anyway, hopefully this is an interesting benchmark, if nothing else.  I hope to revisit this half-way through the season and see which of these teams are "on track" towards my models' predictions.
+But anyway, this was my first time really sitting down and working on this, this being a problem people devote their entire lives to and I think I can just walk in here... :zany_face:  Well anyway, hopefully this is an interesting benchmark, if nothing else.  I hope to revisit this half-way through the season and see which of these teams are "on track" towards my models' predictions.
+
+Thanks :smile:
