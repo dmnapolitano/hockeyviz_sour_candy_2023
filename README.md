@@ -1,6 +1,6 @@
 # 2023-2024 Regular Season Point Prediction for Sour Candy Contest
 
-(Diane's Entry)
+(Diane's Unsubmitted Entry :disappointed:)
 
 https://hockeyviz.com/txt/predictionContest2223
 
