@@ -43,3 +43,40 @@ For most teams, the predicted uncertainty is pretty big, in the nature of 20+ po
 But anyway, this was my first time really sitting down and working on this, this being a problem people devote their entire lives to and I think I can just walk in here... :zany_face:  Well anyway, hopefully this is an interesting benchmark, if nothing else.  I hope to revisit this half-way through the season and see which of these teams are "on track" towards my models' predictions.
 
 Thanks :smile:
+
+## And Now, the Predictions
+
+| Team   | Rank   | Regular Season Points Range |
+|:-------|-------:|---------------:|
+| NSH    |      1 | 92 - 139       |
+| MIN    |      2 | 79 - 144       |
+| EDM    |      3 | 75 - 137       |
+| BOS    |      4 | 77 - 133       |
+| CAR    |      5 | 74 - 128       |
+| SEA    |      6 | 82 - 112       |
+| WPG    |      7 | 62 - 129       |
+| VGK    |      8 | 66 - 125       |
+| NYR    |      9 | 67 - 123       |
+| TOR    |     10 | 65 - 124       |
+| DAL    |     11 | 66 - 117       |
+| FLA    |     12 | 61 - 120       |
+| STL    |     13 | 57 - 123       |
+| COL    |     14 | 63 - 116       |
+| NYI    |     15 | 63 - 116       |
+| LAK    |     16 | 58 - 120       |
+| SJS    |     17 | 53 - 115       |
+| CGY    |     18 | 56 - 112       |
+| WSH    |     19 | 58 - 107       |
+| NJD    |     20 | 56 - 106       |
+| TBL    |     21 | 43 - 106       |
+| PHI    |     22 | 52 - 97        |
+| DET    |     23 | 42 - 102       |
+| PIT    |     24 | 45 - 98        |
+| OTT    |     25 | 47 - 94        |
+| ARI    |     26 | 49 - 92        |
+| CHI    |     27 | 42 - 93        |
+| BUF    |     28 | 39 - 90        |
+| CBJ    |     29 | 30 - 97        |
+| VAN    |     30 | 32 - 93        |
+| MTL    |     31 | 35 - 88        |
+| ANA    |     32 | 23 - 84        |
